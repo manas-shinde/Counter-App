@@ -2,9 +2,16 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    counter: 10,
+    counter: 0,
     tags: ["tag1", "tag2", "tag3", "tag4", "tag5"],
   };
+
+  handleIncrement = () => {
+    console.log("Incremented counter!");
+    this.state.counter++;
+    this.setState({ count: this.state.counter + 1 });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -14,7 +21,12 @@ class Counter extends Component {
         >
           {this.state.counter}
         </span>
-        <button className="btn btn-secondary btn-sm">Increment</button>
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
 
         {this.state.tags.map((tag) => (
           <li key={tag}>{tag}</li>
