@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class Counter extends Component {
   state = {
     counter: 10,
+    tags: ["tag1", "tag2", "tag3", "tag4", "tag5"],
   };
   render() {
     return (
@@ -14,6 +15,10 @@ class Counter extends Component {
           {this.state.counter}
         </span>
         <button className="btn btn-secondary btn-sm">Increment</button>
+
+        {this.state.tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
       </React.Fragment>
     );
   }
