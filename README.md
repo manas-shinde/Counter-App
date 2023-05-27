@@ -60,6 +60,10 @@ The application demonstrates the process of passing values from a parent compone
 
 The application includes a control component that does not have local state. It receives values and functions as props from its parent component and triggers actions based on user interactions.
 
-## Contributing
+### Contributing
 
 If you find any issues with the application or have suggestions for improvements, please feel free to open an issue or submit a pull request in the GitHub repository. Contributions are always welcome!
+
+### Stateless Functional Component
+
+The Counter App includes a stateless functional component called Navbar. This component serves as a control element and does not have its own local state. It receives values and functions as props from its parent component, allowing it to interact with the counter.
