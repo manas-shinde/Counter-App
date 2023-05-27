@@ -2,20 +2,26 @@ import React, { Component } from "react";
 import Counter from "./counter.jsx";
 
 class Counters extends Component {
-  state = {
-    counters: [
-      { id: 1, value: 4 },
-      { id: 2, value: 0 },
-      { id: 3, value: 0 },
-    ],
-  };
   render() {
+    const { onReset, onDelete, onIncrement, counters, onDecrement } =
+      this.props;
     return (
-      <div>
-        {this.state.counters.map((cnt) => (
-          <Counter key={cnt.id} value={cnt.value} />
-        ))}
-      </div>
+      <React.Fragment>
+        <button className="btn btn-primary btn-sm m-2" onClick={onReset}>
+          Reset
+        </button>
+        <div>
+          {counters.map((cnt) => (
+            <Counter
+              key={cnt.id}
+              counter={cnt}
+              onIncrement={onIncrement}
+              onDelete={onDelete}
+              onDecrement={onDecrement}
+            />
+          ))}
+        </div>
+      </React.Fragment>
     );
   }
 }
